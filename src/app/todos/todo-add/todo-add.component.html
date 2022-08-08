@@ -5,5 +5,7 @@
     type="text"
     placeholder="¿Que Deseas Hacer?"
     autofocus
+    [formControl]="todo"
+    (keyup.enter)="addTodo()"
   />
 </header>
