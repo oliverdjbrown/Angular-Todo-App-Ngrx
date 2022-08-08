@@ -20,7 +20,7 @@ export class TodoAddComponent implements OnInit {
 
   addTodo(): void {
     if(this.todo.invalid) return; 
-    this.store.dispatch(actions.create({text: this.todo.value!}));
+    this.store.dispatch(actions.createTodo({text: this.todo.value!}));
     this.clearTodoField();
   }
 
