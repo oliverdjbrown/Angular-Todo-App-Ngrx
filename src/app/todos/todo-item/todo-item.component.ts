@@ -12,7 +12,7 @@ import * as actions from '../todo.actions';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo!: Todo;
-  @ViewChild('inputField') inputField!: ElementRef; 
+  @ViewChild('inputField') inputField!: ElementRef;
   text = new FormControl('', Validators.required);
   checked = new FormControl(false);
   editing: boolean = false;
@@ -24,18 +24,28 @@ export class TodoItemComponent implements OnInit {
     this.checked.setValue(this.todo.completed);
 
     this.checked.valueChanges.subscribe(() => {
-      this.store.dispatch(actions.toggle({id: this.todo.id}));
+      this.store.dispatch(actions.toggleTodo({ id: this.todo.id }));
     });
   }
 
-  editMode(): void {
+  editTodo(): void {
     this.editing = true;
+    this.text.setValue(this.todo.text);
     setTimeout(() => {
       this.inputField.nativeElement.select();
     }, 10);
   }
 
-  endEditMode(): void {
-    this.editing = false; 
+  endEditTodo(): void {
+    this.editing = false;
+    if (this.text.invalid) return;
+    if (this.text.value === this.todo.text) return;
+    this.store.dispatch(
+      actions.editTodo({ id: this.todo.id, text: String(this.text.value) })
+    );
+  }
+
+  deleteTodo(): void {
+    this.store.dispatch(actions.deleteTodo({ id: this.todo.id }));
   }
 }
