@@ -15,6 +15,8 @@
 
 >**Todos** => Models, Pages (Views).
 
+>**Shared** => Module with reusable code like pipes.
+
 ## Good Practices
 - **App.Module** => imports group by library, StoreModule imports a ts file to avoid a big list.
 - Group functionality in folder so everything is together.
