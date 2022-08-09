@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { appReducers } from './app.reducer';
+import { appReducers } from './state/app/app.reducer';
 
 import { TodoModule } from './todos/todo.module';
 import { FooterComponent } from './footer/footer.component';

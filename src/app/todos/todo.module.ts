@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TodoAddComponent } from './todo-add/todo-add.component';
-import { TodoFooterComponent } from './todo-footer/todo-footer.component';
-import { TodoItemComponent } from './todo-item/todo-item.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoPageComponent } from './todo-page/todo-page.component';
+import { TodoAddComponent } from './pages/todo-add/todo-add.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
-import { FilterPipe } from './pipes/filter.pipe';
-
-
+import { FilterTodoPipe } from './pipes/filter-todo.pipe';
+import { TodoFooterComponent } from './pages/todo-footer/todo-footer.component';
+import { TodoItemComponent } from './pages/todo-item/todo-item.component';
+import { TodoListComponent } from './pages/todo-list/todo-list.component';
+import { TodoPageComponent } from './pages/todo-page/todo-page.component';
 
 @NgModule({
-  declarations: [TodoAddComponent, TodoFooterComponent, TodoItemComponent, TodoListComponent, TodoPageComponent, FilterPipe],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule
+  declarations: [
+    TodoAddComponent,
+    TodoFooterComponent,
+    TodoItemComponent,
+    TodoListComponent,
+    TodoPageComponent,
+    FilterTodoPipe,
   ],
-  exports: [TodoPageComponent]
+  imports: [CommonModule, ReactiveFormsModule],
+  exports: [TodoPageComponent],
 })
-export class TodoModule { }
+export class TodoModule {}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/app.reducer';
+import { AppState } from 'src/app/state/app/app.reducer';
 import { filterTypes, setFilter } from 'src/app/state/filter/filter.actions';
 
 @Component({
@@ -9,16 +9,16 @@ import { filterTypes, setFilter } from 'src/app/state/filter/filter.actions';
   styleUrls: ['./todo-footer.component.scss'],
 })
 export class TodoFooterComponent implements OnInit {
-  currentFilter = 'Todos';
-  filters: filterTypes[] = ['Todos', 'Completados', 'Pendientes'];
+  currentFilter: string = 'All';
+  filters: filterTypes[] = ['All', 'Completed', 'Pending'];
   pending: number = 0;
 
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
-    this.store.subscribe((state) => {
-      this.currentFilter = state.filter;
-      this.pending = state.todos.filter((todo) => !todo.completed).length;
+    this.store.subscribe(({filter, todos}) => {
+      this.currentFilter = filter;
+      this.pending = todos.filter((todo) => !todo.completed).length;
     });
   }
 

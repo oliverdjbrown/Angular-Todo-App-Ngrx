@@ -1,9 +1,10 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/app.reducer';
-import { Todo } from '../models/todo.model';
-import * as actions from '../../state/todos/todo.actions';
+import { AppState } from 'src/app/state/app/app.reducer';
+import * as actions from 'src/app/state/todos/todo.actions';
+import { Todo } from '../../models/todo.model';
+
 
 @Component({
   selector: 'app-todo-item',
