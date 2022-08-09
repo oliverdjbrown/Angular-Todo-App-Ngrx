@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
-import { filterTypes, setFilter } from 'src/app/filter/filter.actions';
+import { filterTypes, setFilter } from 'src/app/state/filter/filter.actions';
 
 @Component({
   selector: 'app-todo-footer',
