@@ -22,5 +22,9 @@ export const todoReducer = createReducer(
     state.map((todo) =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     )
+  ),
+  on(actions.toggleAllTodos, (state, { completed }) =>
+    state.map((todo) => ({ ...todo, completed: completed })
+    )
   )
 );
