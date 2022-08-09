@@ -1,27 +1,29 @@
-# TodoApp
+# Angular Todo App - Implementing Redux Pattern
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+<p>Todo App using good practices and managing the state using NGRX</p>
 
-## Development server
+## Used Technology 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Angular 14.10](http://angular.io/)
+- [Ngrx 14](https://ngrx.io/)
+- [Todo MVC Style](https://www.npmjs.com/package/todomvc-app-css)
 
-## Code scaffolding
+## Project Structure
+<p>modules are grouped by functionality</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+>**State** => Ngrx (actions / reducer by folders).
 
-## Build
+>**Todos** => Models, Pages (Views).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Good Practices
+- **App.Module** => imports group by library, StoreModule imports a ts file to avoid a big list.
+- Group functionality in folder so everything is together.
+- Avoid the use of any by specifying all variable types.
+- Prevent array or object mutation by returning a new object.
+- create a shared module with functionality to be export as global functionality like filter pipe (DRY).
 
-## Running unit tests
+## Links
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [Project Code](https://github.com/oliverdjbrown/Angular-Todo-App-Ngrx)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [My LinkedIn Profile](https://www.linkedin.com/in/oliverdjbrown/)
