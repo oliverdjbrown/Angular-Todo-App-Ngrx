@@ -29,7 +29,7 @@ export class TodoItemComponent implements OnInit {
     });
   }
 
-  editTodo(): void {
+  onEditTodo(): void {
     this.editing = true;
     this.text.setValue(this.todo.text);
     setTimeout(() => {
@@ -37,7 +37,7 @@ export class TodoItemComponent implements OnInit {
     }, 10);
   }
 
-  endEditTodo(): void {
+  onEndEditTodo(): void {
     this.editing = false;
     if (this.text.invalid) return;
     if (this.text.value === this.todo.text) return;
@@ -46,7 +46,7 @@ export class TodoItemComponent implements OnInit {
     );
   }
 
-  deleteTodo(): void {
+  onDeleteTodo(): void {
     this.store.dispatch(actions.deleteTodo({ id: this.todo.id }));
   }
 }

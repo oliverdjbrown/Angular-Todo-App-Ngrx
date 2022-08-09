@@ -4,10 +4,10 @@
   >
 
   <ul class="filters">
-    <li *ngFor="let filter of filters" (click)="setFilter(filter)">
+    <li *ngFor="let filter of filters" (click)="onFilter(filter)">
       <a [class.selected]="filter === currentFilter" href="#/">{{ filter }}</a>
     </li>
   </ul>
 
-  <button class="clear-completed">Clean Completed</button>
+  <button class="clear-completed" (click)="onClearCompletedTodos()">Clean Completed</button>
 </footer>

@@ -2,15 +2,15 @@
   <div class="view">
     <input class="toggle" type="checkbox" [formControl]="checked" />
 
-    <label (click)="editTodo()">{{ todo.text }}</label>
+    <label (click)="onEditTodo()">{{ todo.text }}</label>
 
-    <button class="destroy" (click)="deleteTodo()"></button>
+    <button class="destroy" (click)="onDeleteTodo()"></button>
   </div>
   <input
     class="edit"
     type="text"
     [formControl]="text"
-    (blur)="endEditTodo()"
+    (blur)="onEndEditTodo()"
     #inputField
   />
 </li>
