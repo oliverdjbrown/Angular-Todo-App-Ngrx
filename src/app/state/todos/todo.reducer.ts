@@ -13,6 +13,7 @@ export const todoReducer = createReducer(
   initialState,
   on(actions.createTodo, (state, { text }) => [...state, new Todo(text)]),
   on(actions.deleteTodo, (state, { id }) => state.filter(todo => todo.id !== id)),
+  on(actions.clearCompletedTodos, (state) => state.filter(todo => !todo.completed)),
   on(actions.editTodo, (state, { id, text }) =>
     state.map((todo) =>
       todo.id === id ? { ...todo, text } : todo
