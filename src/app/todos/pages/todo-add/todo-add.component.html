@@ -1,11 +1,8 @@
-<header class="header">
-  <h1>Todos</h1>
-  <input
-    class="new-todo"
-    type="text"
-    placeholder="¿What Do you Want To Do?"
-    autofocus
-    [formControl]="todo"
-    (keyup.enter)="addTodo()"
-  />
-</header>
+<input
+class="new-todo"
+type="text"
+placeholder="¿What Do you Want To Do?"
+autofocus
+[formControl]="todo"
+(keyup.enter)="addTodo()"
+/>

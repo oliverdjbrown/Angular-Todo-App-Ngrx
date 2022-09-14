@@ -12,6 +12,8 @@ import { appReducers } from './state/app/app.reducer';
 import { TodoModule } from './todos/todo.module';
 
 import { environment } from '../environments/environment';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,        
     TodoModule,
+    CoreModule,
+    SharedModule,
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
