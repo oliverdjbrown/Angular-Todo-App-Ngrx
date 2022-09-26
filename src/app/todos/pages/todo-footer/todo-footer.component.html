@@ -9,5 +9,9 @@
     </li>
   </ul>
 
-  <button class="clear-completed" (click)="onClearCompletedTodos()">Clean Completed</button>
+  <todo-button 
+      [class]="'clear-completed'" 
+      [text]="'Clean Completed'" 
+      (click)="onClearCompletedTodos()"
+  ></todo-button>
 </footer>
