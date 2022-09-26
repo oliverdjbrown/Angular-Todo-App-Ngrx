@@ -1,8 +1,9 @@
-<input
-class="new-todo"
-type="text"
-placeholder="¿What Do you Want To Do?"
+<todo-input
+[class]="'new-todo'"
+[type]="'text'"
+[placeHolder]="'¿What Do you Want To Do?'"
+[control]="todo"
 autofocus
-[formControl]="todo"
 (keyup.enter)="addTodo()"
-/>
+>
+</todo-input>
