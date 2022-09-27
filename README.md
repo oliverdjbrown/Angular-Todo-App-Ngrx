@@ -9,20 +9,33 @@
 - [Todo MVC Style](https://www.npmjs.com/package/todomvc-app-css)
 
 ## Project Structure
-<p>modules are grouped by functionality</p>
+<p>Modules are grouped by functionality</p>
 
 >**State** => Ngrx (actions / reducer by folders).
 
 >**Todos** => Models, Pages (Views).
 
->**Shared** => Module with reusable code like pipes.
+>**Core** => Main Services, Enums.
+
+>**Shared** => Module with reusable code like UI components and pipes.
 
 ## Good Practices
-- **App.Module** => imports group by library, StoreModule imports a ts file to avoid a big list.
+
+- **APP**
+- Atomic Designe (Smart and Dumbs Components)
+
+- **App.Module** 
+- Imports group by library, StoreModule imports a ts file to avoid a big list.
 - Group functionality in folder so everything is together.
 - Avoid the use of any by specifying all variable types.
 - Prevent array or object mutation by returning a new object.
-- create a shared module with functionality to be export as global functionality like filter pipe (DRY).
+
+- **App.Shared**
+- Create a shared module with functionality to be export as global functionality like UI components or filter pipe (DRY).
+- Group components and pipes in an individual array for easy import and export.
+
+- **Core.Module**
+- Main services by library for high cohesion and low coupling
 
 ## Links
 

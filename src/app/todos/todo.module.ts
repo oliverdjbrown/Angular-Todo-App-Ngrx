@@ -10,6 +10,7 @@ import { TodoFooterComponent } from './pages/todo-footer/todo-footer.component';
 import { TodoItemComponent } from './pages/todo-item/todo-item.component';
 import { TodoListComponent } from './pages/todo-list/todo-list.component';
 import { TodoPageComponent } from './pages/todo-page/todo-page.component';
+import { TodoHeaderComponent } from './pages/todo-header/todo-header.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { TodoPageComponent } from './pages/todo-page/todo-page.component';
     TodoItemComponent,
     TodoListComponent,
     TodoPageComponent,
+    TodoHeaderComponent,
   ],
   imports: [CommonModule, SharedModule, ReactiveFormsModule],
   exports: [TodoPageComponent],

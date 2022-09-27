@@ -1,10 +1,11 @@
 <li [ngClass]="{ completed: checked.value, editing: editing }">
+
   <div class="view">
     <input class="toggle" type="checkbox" [formControl]="checked" />
 
     <label (click)="onEditTodo()">{{ todo.text }}</label>
 
-    <button class="destroy" (click)="onDeleteTodo()"></button>
+    <todo-button [class]="'destroy'" (click)="onDeleteTodo()"></todo-button>
   </div>
   <input
     class="edit"
